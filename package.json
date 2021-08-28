@@ -1,0 +1,26 @@
+{
+  "name": "get-spreadsheet",
+  "version": "0.1.0",
+  "description": "Get Google Spreadsheet datas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yukishiba/get-spreadsheet.git"
+  },
+  "keywords": [
+    "google",
+    "google sheets",
+    "google spreadsheets",
+    "sheets",
+    "spreadsheet",
+    "spreadsheets"
+  ],
+  "author": "yukishiba",
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "^84.0.0"
+  }
+}
