@@ -5,9 +5,9 @@ class GetSpreadSheet {
     this.sheetid = 'sheetid' in options ? options.sheetid : '';
     this.privatekey = 'privatekey' in options ? options.privatekey : {};
     this.rowlabel = 'rowlabel' in options ? options.rowlabel : 0;
-    this.datastart = 'datastart' in options ? options.datastart : 2;
+    this.datastart = 'datastart' in options ? options.datastart : 1;
     this.console = 'console' in options ? options.console : false;
-    this.split = 'split' in options ? options.split : '_';
+    this.split = 'split' in options ? options.split : '';
   }
 
   consoleLog (text) {
@@ -28,7 +28,7 @@ class GetSpreadSheet {
 
   parseAssociativeArray (response) {
     const data = {};
-    for (let i = 2; i < response.data.values.length; i++) {
+    for (let i = this.datastart; i < response.data.values.length; i++) {
       const row = this.cleanData(response, i);
       data[row.key] = ('value' in row) ? row.value : row;
     }
