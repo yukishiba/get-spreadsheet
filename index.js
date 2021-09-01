@@ -68,9 +68,10 @@ class GetSpreadSheet {
 
       try {
         const response = await sheets.spreadsheets.values.get(request);
-        const sheetKey = this.split ? sheetName.split('_')[0] : sheetName;
+        const sheetKey = this.split ? sheetName.split(this.split)[0] : sheetName;
+        const labels = response.data.values[this.rowlabel]
 
-        if (response.data.values[this.rowlabel] === 'key') {
+        if (~labels.indexOf('key')) {
           distData[sheetKey] = this.parseAssociativeArray(response);
         } else {
           distData[sheetKey] = this.parseArray(response);
